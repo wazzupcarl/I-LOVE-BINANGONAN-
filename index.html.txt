@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I LOVE BINANGONAN | I.L.B.</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <nav id="navbar">
+    <div class="nav__logo"><a href="#">I.L.B.</a></div>
+    <ul class="nav__links">
+      <li class="link" data-scroll="home">Home</li>
+      <li class="link" data-scroll="blog">Blog</li>
+      <li class="link" data-scroll="offers">Offers</li>
+      <li class="link" data-scroll="services">Services</li>
+      <li class="link" data-scroll="contacts">Contacts</li>
+    </ul>
+    <div class="menu-btn"><i class="ri-menu-line"></i></div>
+  </nav>
+
+
+  <header id="home">
+    <video autoplay muted loop playsinline class="header-video">
+      <source src="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+
+    <div class="section__container header__content">
+      <h1>I LOVE BINANGONAN</h1>
+      <p>
+        Welcome to Binangonan! Enjoy the charming town center featuring Cafe
+        Detour, the historic Binangonan Church, Kalbaryo, Pritil Market, and the
+        ancient Angono-Binangonan Petroglyphs. Have fun exploring!
+      </p>
+      <button id="readMoreBtn" 
+        data-title="Other information of Binangonan" 
+        data-desc="Binangonan, officially the Municipality of Binangonan (Tagalog: Bayan ng Binangonan), is a municipality in the province of Rizal, Philippines. A thriving fish port and fishing industry is found in Binangonan, having a long coast line facing Laguna de Bay, including the western part of Talim Island. The plant of Rizal Cement and Grandspan are in Binangonan as well. Their main livelihood are fishing and farming.">
+        Read More
+      </button>
+    </div>
+  </header>
+
+
+  <section class="journey__container" id="blog">
+    <div class="section__container">
+      <h2 class="section__title">Welcome to Binangonan</h2>
+      <p class="section__subtitle">The Most Beautiful in Rizal Province</p>
+
+
+      <div class="journey__grid">
+
+
+        <div class="country__card" 
+             data-title="Binangonan Church" 
+             data-desc="Santa Ursula Parish Church, also known as Binangonan Church, is a 225-year-old church located in Barangay Libid, Binangonan, Rizal, in the Philippines. It is under the jurisdiction of the Diocese of Antipolo and is among the diocese's seven Jubilee churches.">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/St._Ursula_Church_Binangonan.JPG" alt="Binangonan Church">
+          <div class="country__name"><i class="ri-map-pin-2-fill"></i> Binangonan Church</div>
+        </div>
+
+
+        <div class="country__card"
+             data-title="Cafe Detour"
+             data-desc="Cafe Detour is a cozy, Scandinavian-themed coffee shop and restaurant located in Barangay Calumpang, Binangonan, Rizal. It offers a casual and comfortable ambiance for dining, working, or casual hangouts, featuring both indoor and outdoor seating.">
+          <img src="https://thehungrygnomeblog.wordpress.com/wp-content/uploads/2013/05/e8df2-detour.jpg" alt="Cafe Detour">
+          <div class="country__name"><i class="ri-map-pin-2-fill"></i> Cafe Detour</div>
+        </div>
+
+
+        <div class="country__card"
+             data-title="Angono-Binangonan Petroglyphs"
+             data-desc="The Angono-Binangonan Petroglyphs are petroglyphs carved into a rock wall between the boundaries of Angono and Binangonan, Rizal, Philippines. It consists of 127 human and animal figures engraved on the rockwall probably carved during the Late Neolithic, or before 2000 BC. They are the oldest known work of art in the Philippines.">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/To_Learn_The_Past.jpg" alt="Angono-Binangonan Petroglyphs">
+          <div class="country__name"><i class="ri-map-pin-2-fill"></i> Angono-Binangonan Petroglyphs</div>
+        </div>
+
+
+        <div class="country__card"
+             data-title="Kalbaryo"
+             data-desc="Mount Calvary, locally known as Kalbaryo, is situated in Libid and serves as a pilgrimage site in Binangonan. The site features approximately 288 steps leading to a summit marked by a large cross, where devotees conduct prayers and reflections, particularly during Holy Week.">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Ang_Kalbaryo.jpg" alt="Kalbaryo">
+          <div class="country__name"><i class="ri-map-pin-2-fill"></i> Kalbaryo</div>
+        </div>
+
+
+        <div class="country__card"
+             data-title="Pritil Market"
+             data-desc="The Pritil Market is a historical public market located in Libid, Binangonan which was built as a self-liquidating project and is now being rebuilt.">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/9800Libid%2C_Binangonan%2C_Rizal_05.jpg" alt="Pritil Market">
+          <div class="country__name"><i class="ri-map-pin-2-fill"></i> Pritil Market</div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="display__container" id="offers">
+    <div class="section__container">
+      <h2 class="section__title">Why Choose Us</h2>
+      <p class="section__subtitle">Travel opens your mind to new worlds.</p>
+      <div class="display__grid">
+        <div class="display__card">
+          <i class="ri-earth-line"></i>
+          <h4>Passionate Travel</h4>
+          <p>Fuel your passion for adventure and discover new horizons.</p>
+        </div>
+        <div class="display__card">
+          <i class="ri-restaurant-line"></i>
+          <h4>Local Cuisine</h4>
+          <p>Savor authentic Binangonan dishes and local delicacies.</p>
+        </div>
+        <div class="display__card">
+          <i class="ri-group-line"></i>
+          <h4>Community Connection</h4>
+          <p>Experience the warmth and genuine hospitality of the locals.</p>
+        </div>
+        <div class="display__card">
+          <i class="ri-road-map-line"></i>
+          <h4>Beautiful Places</h4>
+          <p>Discover the most breathtaking locations in Binangonan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="contacts">
+    <div class="section__container">
+      <h4>I.L.B.</h4>
+
+
+      <div class="social__icons">
+        <a href="https://www.facebook.com/mahalkongbinangonan" target="_blank">
+          <i class="ri-facebook-circle-fill"></i>
+        </a>
+        <a href="https://x.com/TagaBinangonan" target="_blank">
+          <i class="ri-twitter-x-fill"></i>
+        </a>
+        <a href="https://www.instagram.com/explore/locations/237862762/binangonan-rizal-philippines/" target="_blank">
+          <i class="ri-instagram-fill"></i>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Binangonan" target="_blank">
+          <i class="ri-earth-fill"></i>
+        </a>
+      </div>
+
+
+      <p>Travel makes one modest. You see what a tiny place you occupy in the world.</p>
+      <p>© 2025 — Credits to Kelsei De Jesus and Carl Delos Arcos.</p>
+    </div>
+  </footer>
+
+
+  <div id="myModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle">Information</h3> 
+        <span class="close-icon">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p id="modalDesc">Loading...</p>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-ok-btn">OK</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // 1. UNIVERSAL MODAL LOGIC (The "Click View" functionality)
+      const modal = document.getElementById("myModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDesc = document.getElementById("modalDesc");
+      
+      const closeIcon = document.querySelector(".close-icon");
+      const okBtn = document.querySelector(".modal-ok-btn");
+
+
+      function openModal(title, desc) {
+        modalTitle.innerText = title;
+        modalDesc.innerText = desc;
+        modal.style.display = "flex";
+      }
+
+
+      // Selects both the 'Read More' button and all country cards as modal triggers
+      const triggerElements = document.querySelectorAll("button#readMoreBtn, .country__card");
+
+
+      triggerElements.forEach(element => {
+        element.addEventListener("click", (e) => {
+           e.preventDefault();
+           
+           const titleText = element.getAttribute("data-title");
+           const descText = element.getAttribute("data-desc");
+
+
+           if(titleText && descText) {
+             openModal(titleText, descText);
+           }
+        });
+      });
+
+
+      function closeModal() { modal.style.display = "none"; }
+      closeIcon.addEventListener("click", closeModal);
+      okBtn.addEventListener("click", closeModal);
+      window.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+
+
+
+      // 2. NAVBAR SCROLL & MENU
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if(nav) nav.classList.toggle("nav--scrolled", window.scrollY > 20);
+      });
+
+
+      const menuBtn = document.querySelector(".menu-btn");
+      const navLinksContainer = document.querySelector(".nav__links");
+      const navLinks = document.querySelectorAll(".nav__links .link");
+
+
+      if(menuBtn && navLinksContainer){
+        menuBtn.addEventListener("click", () => {
+          navLinksContainer.classList.toggle("show");
+          menuBtn.classList.toggle("open");
+          
+          if (menuBtn.classList.contains("open")) {
+             menuBtn.innerHTML = `<i class="ri-close-line"></i>`;
+          } else {
+             menuBtn.innerHTML = `<i class="ri-menu-line"></i>`;
+          }
+        });
+      }
+
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            const sectionId = link.dataset.scroll;
+            const section = document.getElementById(sectionId);
+            
+            if(navLinksContainer) navLinksContainer.classList.remove("show");
+            if(menuBtn) {
+                menuBtn.classList.remove("open");
+                menuBtn.innerHTML = `<i class="ri-menu-line"></i>`;
+            }
+            
+            navLinks.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+
+
+            if(section) section.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
