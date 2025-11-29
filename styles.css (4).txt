@@ -1,0 +1,647 @@
+/*
+* Main Styles for I LOVE (U) BINANGONAN NYEK 😄
+*/
+
+
+
+
+:root {
+    --primary-blue: #0b62c8;
+    --secondary-blue: #094f9c;
+    --light-gray: #f5f5f5;
+    --dark-text: #333;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+
+body {
+    background: var(--light-gray);
+    color: var(--dark-text);
+    line-height: 1.7;
+    overflow-x: hidden; 
+}
+
+
+
+
+nav {
+    width: 100%;
+    padding: 18px 50px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: 0.3s; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+}
+
+
+
+
+nav.nav--scrolled {
+    padding: 12px 50px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15); 
+}
+
+
+
+
+.nav__logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+
+
+
+.nav__links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+
+
+
+.link {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+
+
+
+.link:hover,
+.link.active {
+    color: var(--primary-blue);
+}
+
+
+
+
+.menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+
+
+header {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+
+
+
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+/* BG YT VID #1 */
+.video-background-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+    z-index: -2; 
+    background: #000;
+}
+
+
+
+
+/* STYLE YT VID #2 */
+.video-background-wrapper iframe { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 16:9 LANG KAKAYANIN */
+    width: 100vw; 
+    height: 56.25vw; /* 16:9 ratio: 9/16 = 0.5625 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* 16:9 ratio: 16/9 = 1.7777 */
+    transform: translate(-50%, -50%);
+    
+    pointer-events: none; 
+}
+
+
+
+
+/* OVERLAY #3 */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); 
+    z-index: 1; 
+}
+
+
+
+
+.header__content {
+    text-align: left;
+    color: #fff;
+    max-width: 650px;
+
+
+
+
+    z-index: 2; 
+    position: relative;
+}
+
+
+
+
+.header__content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7); 
+}
+
+
+
+
+.header__content p {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+}
+
+
+
+
+header button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--primary-blue);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s; 
+}
+
+
+
+
+header button:hover {
+    background: var(--secondary-blue);
+}
+
+
+
+
+.section__container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+
+
+
+.section__title {
+    font-size: 2.3rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+.section__subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+
+
+
+/* GRID ADJUSTMENT #4*/
+.journey__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+
+
+
+.country__card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+
+
+.country__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); 
+}
+
+
+
+
+.country__card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+
+.country__name {
+    padding: 12px 15px;
+    font-weight: 600;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+
+
+.display__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+
+
+
+.display__card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.2s; 
+}
+
+
+
+
+.display__card:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+}
+
+
+
+
+.display__card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+
+
+
+.display__card h4 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+
+
+.guide__grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+
+
+
+.guide__card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 250px;
+    width: 100%;
+}
+
+
+
+
+.guide__image_wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-blue); 
+    box-shadow: 0 0 0 5px rgba(205, 227, 255, 0.7); 
+}
+
+
+
+
+.guide__image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+.guide__card h4 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+
+
+.guide__card p {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+
+
+
+footer {
+    background: var(--primary-blue);
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+
+
+footer h4 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+
+
+
+.social__icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.social__icons a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.social__icons i {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+
+footer i:hover {
+    transform: scale(1.1); 
+}
+
+
+
+
+footer p {
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+
+
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 14px 25px;
+    }
+
+
+
+
+    .nav__links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: #fff;
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+        transition: 0.4s;
+        box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+    }
+
+
+
+
+    .nav__links.show {
+        right: 0;
+    }
+
+
+
+
+    .menu-btn {
+        display: block;
+        color: var(--primary-blue);
+    }
+
+
+
+
+    header {
+        padding-top: 100px;
+    }
+
+
+
+
+    .guide__grid {
+        gap: 25px;
+    }
+}
+
+
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+
+
+
+.modal-box {
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    position: relative;
+    animation: slideUp 0.3s;
+}
+
+
+
+
+.modal-header {
+    background: var(--primary-blue);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+
+
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+
+
+.close-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.2s;
+}
+
+
+
+
+.close-icon:hover {
+    color: #ffcccc;
+}
+
+
+
+
+.modal-body {
+    padding: 20px;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
+
+.modal-footer {
+    padding: 15px 20px;
+    background: #f9f9f9;
+    text-align: right;
+    border-top: 1px solid #eee;
+}
+
+
+
+
+.modal-ok-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+
+
+.modal-ok-btn:hover {
+    background: var(--secondary-blue);
+}
+
+
+
+
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes slideUp { from {transform: translateY(20px);} to {transform: translateY(0);} }
