@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I Love Binangonan | I.L.B.</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+
+
+    <style>
+        /*
+        * Main Styles for I LOVE BINANGONAN
+        */
+
+        :root {
+            --primary-blue: #0b62c8;
+            --secondary-blue: #094f9c;
+            --light-gray: #f5f5f5;
+            --dark-text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: var(--light-gray);
+            color: var(--dark-text);
+            line-height: 1.7;
+            overflow-x: hidden; 
+        }
+
+        nav {
+            width: 100%;
+            padding: 18px 50px;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: 0.3s; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+
+        nav.nav--scrolled {
+            padding: 12px 50px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15); 
+        }
+
+        .nav__logo a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav__links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .link {
+            cursor: pointer;
+            font-weight: 500;
+            padding: 6px 10px;
+            transition: 0.3s;
+        }
+
+        .link:hover,
+        .link.active {
+            color: var(--primary-blue);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        header {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Wrapper for the YouTube iFrame */
+        .video-background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            overflow: hidden;
+            z-index: -2; 
+            background: #000;
+        }
+        
+        /* Styles to make the YouTube iFrame cover the entire area */
+        .video-background-wrapper iframe { 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* These dimensions are set for an optimal 16:9 fullscreen view */
+            width: 100vw; 
+            height: 56.25vw; /* 16:9 ratio: 9/16 = 0.5625 */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 ratio: 16/9 = 1.7777 */
+            transform: translate(-50%, -50%);
+            
+            pointer-events: none; 
+        }
+
+        /* Overlay provides a dark tint for text readability */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65); 
+            z-index: 1; 
+        }
+        
+        .header__content {
+            text-align: left;
+            color: #fff;
+            max-width: 650px;
+
+            z-index: 2; 
+            position: relative;
+        }
+
+        .header__content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.7); 
+        }
+
+        .header__content p {
+            margin-bottom: 25px;
+            font-size: 1rem;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+        }
+
+        header button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: #fff;
+            background: var(--primary-blue);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s; 
+        }
+
+        header button:hover {
+            background: var(--secondary-blue);
+        }
+
+        .section__container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .section__title {
+            font-size: 2.3rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section__subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Adjusted grid for 6 items (3 columns on desktop, 2 or 1 on mobile) */
+        .journey__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .country__card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .country__card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15); 
+        }
+
+        .country__card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .country__name {
+            padding: 12px 15px;
+            font-weight: 600;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .display__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .display__card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.2s; 
+        }
+
+        .display__card:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+        }
+
+        .display__card i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .display__card h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .guide__grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .guide__card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 250px;
+            width: 100%;
+        }
+
+        .guide__image_wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary-blue); 
+            box-shadow: 0 0 0 5px rgba(205, 227, 255, 0.7); 
+        }
+
+        .guide__image_wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .guide__card h4 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .guide__card p {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer h4 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .social__icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 15px;
+        }
+
+        .social__icons a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social__icons i {
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        footer i:hover {
+            transform: scale(1.1); 
+        }
+
+        footer p {
+            opacity: 0.85;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 14px 25px;
+            }
+
+            .nav__links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: #fff;
+                width: 70%;
+                height: 100vh;
+                flex-direction: column;
+                padding: 40px 20px;
+                gap: 20px;
+                transition: 0.4s;
+                box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+            }
+
+            .nav__links.show {
+                right: 0;
+            }
+
+            .menu-btn {
+                display: block;
+                color: var(--primary-blue);
+            }
+
+            header {
+                padding-top: 100px;
+            }
+
+            .guide__grid {
+                gap: 25px;
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-box {
+            background-color: #fff;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+            animation: slideUp 0.3s;
+        }
+
+        .modal-header {
+            background: var(--primary-blue);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .close-icon {
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .close-icon:hover {
+            color: #ffcccc;
+        }
+
+        .modal-body {
+            padding: 20px;
+            font-size: 0.95rem;
+            color: var(--dark-text);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .modal-footer {
+            padding: 15px 20px;
+            background: #f9f9f9;
+            text-align: right;
+            border-top: 1px solid #eee;
+        }
+
+        .modal-ok-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .modal-ok-btn:hover {
+            background: var(--secondary-blue);
+        }
+
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        @keyframes slideUp { from {transform: translateY(20px);} to {transform: translateY(0);} }
+    </style>
+    </head>
+
+
+<body>
+    <nav id="navbar">
+        <div class="nav__logo"><a href="#">I.L.B.</a></div>
+        <ul class="nav__links">
+            <li class="link" data-scroll="home">Home</li>
+            <li class="link" data-scroll="blog">Blog</li>
+            <li class="link" data-scroll="offers">Offers</li>
+            <li class="link" data-scroll="contacts">Contacts</li>
+            <li class="link" data-scroll="guide">Guide</li>
+        </ul>
+        <div class="menu-btn"><i class="ri-menu-line"></i></div>
+    </nav>
+
+
+    <header id="home">
+        <div class="video-background-wrapper" id="videoWrapper"> 
+            <iframe
+                id="youtube-bg"
+                src="https://www.youtube.com/embed/cOeJfXiumyI?autoplay=1&mute=1&loop=1&playlist=cOeJfXiumyI&controls=0&modestbranding=1&rel=0"
+                frameborder="0"
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                title="Binangonan Background Video Stream"
+            ></iframe>
+        </div>
+        
+        <div class="video-overlay" id="videoOverlay"></div>
+
+
+        <div class="section__container header__content">
+            <div class="dark-overlay"></div>
+            <h1>I LOVE BINANGONAN</h1>
+            <p>
+                Welcome to Binangonan! Enjoy the charming town center featuring Cafe
+                Detour, the historic Binangonan Church, Kalbaryo, Pritil Market,the ancient Angono-Binangonan Petroglyph, and the lake called Talim Island. Have fun exploring!
+            </p>
+            <button id="readMoreBtn"
+                data-title="Other information of Binangonan"
+                data-desc="Binangonan, officially the Municipality of Binangonan (Tagalog: Bayan ng Binangonan), is a municipality in the province of Rizal, Philippines. A thriving fish port and fishing industry is found in Binangonan, having a long coast line facing Laguna de Bay, including the western part of Talim Island. The plant of Rizal Cement and Grandspan are in Binangonan as well. Their main livelihood are fishing and farming.">
+                Read More
+            </button>
+        </div>
+    </header>
+
+
+    <section class="journey__container" id="blog">
+        <div class="section__container">
+            <h2 class="section__title">Welcome to Binangonan</h2>
+            <p class="section__subtitle">The Most Beautiful in Rizal Province</p>
+
+
+            <div class="journey__grid">
+                <div class="country__card"
+                    data-title="Binangonan Church"
+                    data-desc="Santa Ursula Parish Church, also known as Binangonan Church, is a 225-year-old church located in Barangay Libid, Binangonan, Rizal, in the Philippines. It is under the jurisdiction of the Diocese of Antipolo and is among the diocese's seven Jubilee churches.">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/St._Ursula_Church_Binangonan.JPG" alt="Binangonan Church">
+                    <div class="country__name"><i class="ri-map-pin-2-fill"></i> Binangonan Church</div>
+                </div>
+
+
+                <div class="country__card"
+                    data-title="Cafe Detour"
+                    data-desc="Cafe Detour is a cozy, Scandinavian-themed coffee shop and restaurant located in Barangay Calumpang, Binangonan, Rizal. It offers a casual and comfortable ambiance for dining, working, or casual hangouts, featuring both indoor and outdoor seating.">
+                    <img src="https://thehungrygnomeblog.wordpress.com/wp-content/uploads/2013/05/e8df2-detour.jpg" alt="Cafe Detour">
+                    <div class="country__name"><i class="ri-map-pin-2-fill"></i> Cafe Detour</div>
+                </div>
+
+
+                <div class="country__card"
+                    data-title="Angono-Binangonan Petroglyphs"
+                    data-desc="The Angono-Binangonan Petroglyphs are petroglyphs carved into a rock wall between the boundaries of Angono and Binangonan, Rizal, Philippines. It consists of 127 human and animal figures engraved on the rockwall probably carved during the Late Neolithic, or before 2000 BC. They are the oldest known work of art in the Philippines.">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/To_Learn_The_Past.jpg" alt="Angono-Binangonan Petroglyphs">
+                    <div class="country__name"><i class="ri-map-pin-2-fill"></i> Angono-Binangonan Petroglyphs</div>
+                </div>
+
+
+                <div class="country__card"
+                    data-title="Kalbaryo"
+                    data-desc="Mount Calvary, locally known as Kalbaryo, is situated in Libid and serves as a pilgrimage site in Binangonan. The site features approximately 288 steps leading to a summit marked by a large cross, where devotees conduct prayers and reflections, particularly during Holy Week.">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Ang_Kalbaryo.jpg" alt="Kalbaryo">
+                    <div class="country__name"><i class="ri-map-pin-2-fill"></i> Kalbaryo</div>
+                </div>
+
+
+                <div class="country__card"
+                    data-title="Pritil Market"
+                    data-desc="The Pritil Market is a historical public market located in Libid, Binangonan which was built as a self-liquidating project and is now being rebuilt.">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/9800Libid%2C_Binangonan%2C_Rizal_05.jpg" alt="Pritil Market">
+                    <div class="country__name"><i class="ri-map-pin-2-fill"></i> Pritil Market</div>
+                </div>
+
+                <div class="country__card"
+                    data-title="Talim Island"
+                    data-desc="Talim Island is the largest lake island in Laguna de Bay, the largest lake in the Philippines. The hilly island is within the boundaries of the Province of Rizal, under the jurisdiction of two municipalities. The western side is part of the municipality of Binangonan.">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Everthing_Is_Worth_Waiting_For_%2824583525%29.jpeg" alt="Talim Island">
+                    <div class="country__name"><i class="ri-map-pin-2-fill"></i> Talim Island</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="display__container" id="offers">
+        <div class="section__container">
+            <h2 class="section__title">Why Choose Us</h2>
+            <p class="section__subtitle">Travel opens your mind to new worlds.</p>
+            <div class="display__grid">
+                <div class="display__card">
+                    <i class="ri-earth-line"></i>
+                    <h4>Passionate Travel</h4>
+                    <p>Fuel your passion for adventure and discover new horizons.</p>
+                </div>
+                <div class="display__card">
+                    <i class="ri-restaurant-line"></i>
+                    <h4>Local Cuisine</h4>
+                    <p>Savor authentic Binangonan dishes and local delicacies.</p>
+                </div>
+                <div class="display__card">
+                    <i class="ri-road-map-line"></i>
+                    <h4>Beautiful Places</h4>
+                    <p>Discover the most breathtaking locations in Binangonan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="guide__container" id="guide">
+        <div class="section__container">
+            <h2 class="section__title">Our 2our Guide</h2>
+            <p class="section__subtitle">Meet the team dedicated to showing you Binangonan.</p>
+
+
+<div class="guide__grid">
+                <div class="guide__card">
+                    <div class="guide__image_wrapper">
+                        <img src="https://i.ibb.co/k2RsW1sS/Messenger-creation-866-B0418-C2-BA-4860-9-F6-D-4-E53-C24-F90-CB.jpg" alt="Kelsei De Jesus">
+                    </div>
+                    <h4>Kelsei De Jesus</h4>
+                    <p>The local food and adventure specialist.</p>
+                </div>
+<div class="guide__card">
+
+<div class="guide__image_wrapper">
+
+<img src="https://i.ibb.co/R4Tbrz9h/Carl.jpg" alt="Carl Delos Arcos">
+
+</div>
+
+<h4>Carl Delos Arcos</h4>
+
+<p>The cultural and historical expert.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer id="contacts">
+
+<div class="section__container">
+
+<h4>I.L.B.</h4>
+
+
+
+
+
+
+
+
+
+<div class="social__icons">
+
+<a href="https://www.facebook.com/mahalkongbinangonan" target="_blank">
+
+<i class="ri-facebook-circle-fill"></i>
+
+</a>
+
+<a href="https://x.com/TagaBinangonan" target="_blank">
+
+<i class="ri-twitter-x-fill"></i>
+
+</a>
+
+<a href="https://www.instagram.com/zup.carl?igsh=MTUydmJ1ZzVjNTh5Yw==" target="_blank">
+
+<i class="ri-instagram-fill"></i>
+
+</a>
+
+<a href="https://en.wikipedia.org/wiki/Binangonan" target="_blank">
+
+<i class="ri-earth-fill"></i>
+
+</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+<p>Travel makes one modest. You see what a tiny place you occupy in the world.</p>
+
+<p>© 2025 — Credits to I LOVE BINANGONAN.</p>
+
+</div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+<div id="myModal" class="modal-overlay">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3 id="modalTitle">Information</h3>
+
+<span class="close-icon">&times;</span>
+
+</div>
+
+<div class="modal-body">
+
+<p id="modalDesc">Loading...</p>
+
+</div>
+
+<div class="modal-footer">
+
+<button class="modal-ok-btn">OK</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+// ===================================
+// MODAL AND SCROLLING FUNCTIONS
+// ===================================
+
+const mainModal = document.getElementById("myModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+
+const closeModalIcon = document.querySelector(".close-icon");
+const okButton = document.querySelector(".modal-ok-btn");
+
+function openInfoModal(title, description) {
+modalTitle.innerText = title;
+modalDesc.innerText = description;
+mainModal.style.display = "flex";
+}
+
+const modalTriggers = document.querySelectorAll("#readMoreBtn, .country__card");
+
+modalTriggers.forEach(btnOrCard => {
+btnOrCard.addEventListener("click", (evt) => {
+evt.preventDefault();
+
+const titleTxt = btnOrCard.getAttribute("data-title");
+const descTxt = btnOrCard.getAttribute("data-desc");
+
+if(titleTxt && descTxt) {
+openInfoModal(titleTxt, descTxt);
+}
+});
+});
+
+function closeTheModal() {
+mainModal.style.display = "none";
+}
+
+closeModalIcon.addEventListener("click", closeTheModal);
+okButton.addEventListener("click", closeTheModal);
+
+window.addEventListener("click", (e) => {
+if (e.target === mainModal) closeTheModal();
+});
+
+// NAVBAR SCROLL AND MENU HANDLING
+window.addEventListener("scroll", () => {
+const mainNav = document.querySelector("nav");
+if(mainNav) mainNav.classList.toggle("nav--scrolled", window.scrollY > 20);
+});
+
+const menuButton = document.querySelector(".menu-btn");
+const navContainer = document.querySelector(".nav__links");
+const allNavLinks = document.querySelectorAll(".nav__links .link");
+
+if(menuButton && navContainer){
+menuButton.addEventListener("click", () => {
+navContainer.classList.toggle("show");
+menuButton.classList.toggle("open");
+
+if (menuButton.classList.contains("open")) {
+menuButton.innerHTML = `<i class="ri-close-line"></i>`;
+} else {
+menuButton.innerHTML = `<i class="ri-menu-line"></i>`;
+}
+});
+}
+
+allNavLinks.forEach(link => {
+link.addEventListener("click", () => {
+const targetSectionId = link.dataset.scroll;
+const sectionEl = document.getElementById(targetSectionId);
+
+if(navContainer) navContainer.classList.remove("show");
+if(menuButton) {
+menuButton.classList.remove("open");
+menuButton.innerHTML = `<i class="ri-menu-line"></i>`;
+}
+
+allNavLinks.forEach(l => l.classList.remove("active"));
+link.classList.add("active");
+
+if(sectionEl) sectionEl.scrollIntoView({ behavior: "smooth" });
+});
+});
+});
+</script>
+</body>
+</html>
