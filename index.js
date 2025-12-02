@@ -71,4 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
             if(target) target.scrollIntoView({ behavior: "smooth" });
         });
     });
+
 });
